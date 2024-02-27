@@ -2,13 +2,18 @@
   "name": "javascript-fileio-excelcsv",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/index.js"
   },
   "author": "Dhananjay Kumar",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^3.1.0",
+    "promise-fs": "^2.1.1"
   }
 }
+
+
