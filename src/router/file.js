@@ -9,13 +9,9 @@ const router = express.Router();
 
 router.get('/readFile', async (req, res) => {
     try {
-
-        const filePath = '../../exports/files/Document.pdf'
+        const filePath = '../../exports/files/temp.txt'
         const fileData = await readFile(filePath);
-
-        res.setHeader('Content-Type', 'application/pdf'); // Set the correct content type for PDF
-
-        res.send(fileData);
+        res.status(200).json({success: true, fileData});
     } catch (error) {
         console.error('Error reading file:', error);
         res.status(500).send('Internal Server Error');
