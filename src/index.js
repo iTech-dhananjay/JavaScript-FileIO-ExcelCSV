@@ -1,0 +1,1 @@
+// In the command git push -u origin main, the -u flag stands for "upstream". When you use -u or --set-upstream, you're telling Git to set the default remote branch for the current local branch.
