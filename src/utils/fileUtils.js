@@ -1,10 +1,14 @@
-import fs from "promise-fs"
+// utils/fileUtils.js
+
+import {promises as fsPromises} from "fs";
 
 async function readFile(filePath) {
     try {
-        const data = await fs.readFile(filePath, 'utf8');
+        console.log(filePath, 'filePath')
+        const data = await fsPromises.readFile(filePath);
         return data;
     } catch (error) {
+        console.error('Error reading file:', error);
         throw error;
     }
 }

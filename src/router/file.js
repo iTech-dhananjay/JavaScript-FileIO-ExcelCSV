@@ -1,14 +1,20 @@
 // file.js
 
 import express from 'express';
-import {readFile} from '../utils/fileUtils.js'; // Corrected import path for readFile
+import {readFile} from '../utils/fileUtils.js';
+import path from 'path'
 
 const router = express.Router();
 
-router.post('/readFile', async (req, res) => {
+
+router.get('/readFile', async (req, res) => {
     try {
-        const filePath = '../../exports/files'; // Ensure this path is correct
+
+        const filePath = '../../exports/files/Document.pdf'
         const fileData = await readFile(filePath);
+
+        res.setHeader('Content-Type', 'application/pdf'); // Set the correct content type for PDF
+
         res.send(fileData);
     } catch (error) {
         console.error('Error reading file:', error);
@@ -16,4 +22,7 @@ router.post('/readFile', async (req, res) => {
     }
 });
 
+
 export default router;
+
+
